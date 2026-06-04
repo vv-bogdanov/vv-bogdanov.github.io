@@ -9,6 +9,10 @@
   --shadow: 0 18px 45px rgb(15 23 42 / 0.08);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   color: var(--text-color);
   background: #ffffff;
@@ -20,11 +24,33 @@ body {
     "Segoe UI",
     sans-serif;
   line-height: 1.7;
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
 }
 
 .navbar-title {
   font-weight: 700;
+}
+
+.navbar-brand {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.55rem;
+}
+
+.navbar-title::before {
+  background-image: url("assets/slava-avatar-136.jpg");
+  background-position: center 18%;
+  background-size: cover;
+  border: 2px solid #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgb(15 23 42 / 0.18);
+  content: "";
+  display: inline-block;
+  height: 32px;
+  margin-right: 0.55rem;
+  vertical-align: middle;
+  width: 32px;
 }
 
 .navbar {
@@ -165,6 +191,7 @@ footer.footer {
 
 .home-profile-copy p {
   margin-bottom: 0.9rem;
+  text-align: left;
 }
 
 .home-content {
@@ -206,6 +233,48 @@ footer.footer {
   background: var(--soft-bg);
 }
 
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0.8rem 0 1.4rem;
+}
+
+.social-links a {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  color: var(--text-color);
+  display: inline-flex;
+  font-size: 0.9rem;
+  font-weight: 650;
+  gap: 0.45rem;
+  min-height: 2.1rem;
+  padding: 0.2rem 0.72rem;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: var(--soft-bg);
+  border-color: #b8c3d6;
+  color: var(--link-color);
+}
+
+.social-links i {
+  color: var(--muted-color);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.social-links a:hover i {
+  color: var(--link-color);
+}
+
+.home-social-links {
+  margin-top: 0.75rem;
+}
+
 .theme-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -229,6 +298,7 @@ footer.footer {
   margin: 0;
   color: var(--muted-color);
   font-size: 0.95rem;
+  text-align: left;
 }
 
 .featured-post {
@@ -288,6 +358,14 @@ footer.footer {
 .featured-copy p:last-child {
   color: var(--muted-color);
   margin-bottom: 0;
+  text-align: left;
+}
+
+.description,
+.listing-description,
+.quarto-title-meta p,
+footer.footer p {
+  text-align: left;
 }
 
 .listing-category {
@@ -298,6 +376,16 @@ footer.footer {
   border-radius: 8px !important;
   border-color: var(--border-color) !important;
   box-shadow: 0 10px 26px rgb(15 23 42 / 0.05);
+}
+
+@media (min-width: 721px) {
+  #quarto-document-content > p,
+  #quarto-document-content section > p,
+  .home-content > p {
+    hyphens: auto;
+    text-align: justify;
+    text-justify: inter-word;
+  }
 }
 
 @media (max-width: 720px) {

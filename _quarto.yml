@@ -22,8 +22,17 @@ website:
         href: projects.qmd
       - text: "About"
         href: about.qmd
+      - icon: linkedin
+        href: https://www.linkedin.com/in/viacheslav-v-bogdanov/
+        aria-label: LinkedIn
+      - icon: twitter-x
+        href: https://x.com/vvbogdanov
+        aria-label: X
+      - icon: medium
+        href: https://medium.com/@vvbogdanov
+        aria-label: Medium
       - icon: github
-        href: https://github.com/bogdoslavik
+        href: https://github.com/vv-bogdanov
         aria-label: GitHub
   page-footer:
     left: "Copyright 2026 Viacheslav Bogdanov"
