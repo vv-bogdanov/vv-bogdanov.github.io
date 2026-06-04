@@ -2,6 +2,7 @@
 title: "Viacheslav Bogdanov"
 ---
 
+```{=html}
 <style>
 #title-block-header {
   display: none;
@@ -9,17 +10,9 @@ title: "Viacheslav Bogdanov"
 </style>
 
 <header class="home-hero">
-  <img
-    class="home-hero-map"
-    src="assets/milky-way-map.jpeg"
-    alt="Milky Way map"
-  />
+  <img class="home-hero-map" src="assets/milky-way-map.jpeg" alt="Milky Way map" />
   <div class="home-profile">
-    <img
-      class="home-avatar"
-      src="assets/slava.jpg"
-      alt="Viacheslav Bogdanov"
-    />
+    <img class="home-avatar" src="assets/slava.jpg" alt="Viacheslav Bogdanov" />
     <div class="home-profile-copy">
       <p class="home-eyebrow">Architect / Full-stack engineer / Tool builder</p>
       <h1>Viacheslav Bogdanov</h1>
@@ -36,6 +29,7 @@ title: "Viacheslav Bogdanov"
     </div>
   </div>
 </header>
+```
 
 My work spans developer tooling, AI-assisted engineering, DeFi systems, mobile
 products, automation, and reliable end-to-end product delivery.
@@ -46,6 +40,7 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
 
 ## Themes
 
+```{=html}
 <div class="theme-grid">
   <div>
     <h3>Developer tools</h3>
@@ -64,18 +59,17 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
     <p>Prototype, measure, simplify, ship, and improve from real usage.</p>
   </div>
 </div>
+```
 
 ## Recent Writing
 
+```{=html}
 <article class="featured-post">
   <a class="featured-image" href="posts/fast-duplicate-code-detection-for-agents/">
-    <img
-      src="assets/milky-way-map.jpeg"
-      alt="Milky Way map"
-    />
+    <img src="assets/milky-way-map.jpeg" alt="Milky Way map" />
   </a>
   <div class="featured-copy">
-    <p class="featured-meta">Jun 4, 2026 / developer tools / Rust / CI</p>
+    <p class="featured-meta">Jun 4, 2026 / developer tools / Rust / CI / npm</p>
     <h3>
       <a href="posts/fast-duplicate-code-detection-for-agents/">
         AI agents generate code faster. Duplicate-code checks need to keep up.
@@ -87,3 +81,4 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
     </p>
   </div>
 </article>
+```
