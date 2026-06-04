@@ -22,7 +22,7 @@ website:
         href: https://github.com/bogdoslavik
         aria-label: GitHub
   page-footer:
-    left: "(c) 2026 Viacheslav Bogdanov"
+    left: "Copyright 2026 Viacheslav Bogdanov"
     right:
       - text: "GitHub"
         href: https://github.com/vv-bogdanov
