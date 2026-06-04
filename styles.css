@@ -100,32 +100,42 @@ code {
   color: var(--muted-color);
 }
 
+.quarto-figure img,
+img.figure-img,
+.launch-diagram {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgb(15 23 42 / 0.06);
+}
+
 footer.footer {
   border-top: 1px solid var(--border-color);
   color: var(--muted-color);
 }
 
 .home-hero {
-  margin: 1.2rem 0 2.75rem;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  margin: 0 0 2.75rem;
+  border: 0;
+  border-radius: 0;
   background: var(--surface);
-  box-shadow: 0 14px 34px rgb(15 23 42 / 0.05);
+  box-shadow: none;
   overflow: visible;
 }
 
 .home-hero-map {
   display: block;
   width: 100%;
-  height: 260px;
+  height: 300px;
   object-fit: cover;
   object-position: center center;
-  border-radius: 8px 8px 0 0;
+  border-radius: 0;
 }
 
 .home-profile {
   display: block;
-  margin: -68px 1.35rem 0;
+  max-width: var(--content-width);
+  margin: -68px auto 0;
+  padding: 0 1rem;
   position: relative;
 }
 
@@ -155,6 +165,12 @@ footer.footer {
 
 .home-profile-copy p {
   margin-bottom: 0.9rem;
+}
+
+.home-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
 }
 
 .home-eyebrow,
@@ -280,11 +296,11 @@ footer.footer {
 
 @media (max-width: 720px) {
   .home-hero-map {
-    height: 178px;
+    height: 190px;
   }
 
   .home-profile {
-    margin: -52px 1rem 0;
+    margin-top: -52px;
   }
 
   .home-avatar {

@@ -1,18 +1,61 @@
 ---
 title: "Viacheslav Bogdanov"
+page-layout: full
 ---
 
 ```{=html}
 <style>
-#title-block-header {
+body {
+  padding-top: 0 !important;
+}
+
+#quarto-header {
   display: none;
+}
+
+#quarto-content {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+}
+
+#quarto-content.page-navbar {
+  margin-top: 0 !important;
+}
+
+#title-block-header {
+  display: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+#quarto-document-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+main.content {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-column: auto !important;
 }
 </style>
 
 <header class="home-hero">
   <img class="home-hero-map" src="assets/milky-way-map.jpeg" alt="Milky Way map" />
   <div class="home-profile">
-    <img class="home-avatar" src="assets/slava.jpg" alt="Viacheslav Bogdanov" />
+    <img
+      class="home-avatar"
+      src="assets/slava-avatar-272.jpg"
+      srcset="assets/slava-avatar-136.jpg 136w, assets/slava-avatar-272.jpg 272w, assets/slava-avatar-408.jpg 408w"
+      sizes="(max-width: 720px) 104px, 136px"
+      width="136"
+      height="136"
+      alt="Viacheslav Bogdanov"
+    />
     <div class="home-profile-copy">
       <p class="home-eyebrow">Architect / Full-stack engineer / Tool builder</p>
       <h1>Viacheslav Bogdanov</h1>
@@ -30,6 +73,8 @@ title: "Viacheslav Bogdanov"
   </div>
 </header>
 ```
+
+::: {.home-content}
 
 My work spans developer tooling, AI-assisted engineering, DeFi systems, mobile
 products, automation, and reliable end-to-end product delivery.
@@ -82,3 +127,5 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
   </div>
 </article>
 ```
+
+:::

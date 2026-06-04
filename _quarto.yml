@@ -2,8 +2,12 @@ project:
   type: website
   output-dir: _site
   resources:
+    - assets/jscpd-rs-duplicate-code-flow.png
+    - assets/jscpd-rs-duplicate-code-flow.svg
     - assets/milky-way-map.jpeg
-    - assets/slava.jpg
+    - assets/slava-avatar-136.jpg
+    - assets/slava-avatar-272.jpg
+    - assets/slava-avatar-408.jpg
 
 website:
   title: "Viacheslav Bogdanov"
