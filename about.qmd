@@ -19,6 +19,19 @@ Touch Shell, Animated Weather, and aTorrent.
 In recent years my work has focused on DeFi, Solidity, optimization, security,
 AI agents, local AI systems, and new developer tools.
 
+My Web3 work includes lending/CDP protocols, Aave v3 market forks, ZK bridge
+and intent-based swap infrastructure, MEV systems, efficient DEX routing,
+multi-step yield strategies, helper contracts, Solidity libraries, and
+multi-chain integrations across 20+ EVM networks.
+
+The recurring themes are smart contract audits, security reviews, gas and
+bytecode optimization, MEV-aware execution, formal test discipline, and
+production-grade reliability for financial systems.
+
+I have also completed advanced Solidity training focused on EVM assembly,
+HUFF, and deep optimization, placed 3rd in an optimization competition, and won
+the ConsensusLab Grand Prize at Open Data Hack.
+
 ## How I Work
 
 I like to research deeply, reduce unclear problems to working architecture, and
