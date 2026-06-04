@@ -44,7 +44,6 @@ body {
   background-size: cover;
   border: 2px solid #ffffff;
   border-radius: 999px;
-  box-shadow: 0 4px 12px rgb(15 23 42 / 0.18);
   content: "";
   display: inline-block;
   height: 32px;
@@ -173,7 +172,6 @@ footer.footer {
   object-fit: cover;
   object-position: center 18%;
   border: 6px solid var(--surface);
-  box-shadow: 0 10px 24px rgb(15 23 42 / 0.18);
   background: var(--surface);
 }
 
@@ -233,14 +231,15 @@ footer.footer {
   background: var(--soft-bg);
 }
 
-.social-links {
+.footer-social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
-  margin: 0.8rem 0 1.4rem;
+  justify-content: flex-end;
+  margin: 0;
 }
 
-.social-links a {
+.footer-social-links a {
   align-items: center;
   background: #fff;
   border: 1px solid var(--border-color);
@@ -255,24 +254,20 @@ footer.footer {
   text-decoration: none;
 }
 
-.social-links a:hover {
+.footer-social-links a:hover {
   background: var(--soft-bg);
   border-color: #b8c3d6;
   color: var(--link-color);
 }
 
-.social-links i {
+.footer-social-links i {
   color: var(--muted-color);
   font-size: 1rem;
   line-height: 1;
 }
 
-.social-links a:hover i {
+.footer-social-links a:hover i {
   color: var(--link-color);
-}
-
-.home-social-links {
-  margin-top: 0.75rem;
 }
 
 .theme-grid {
