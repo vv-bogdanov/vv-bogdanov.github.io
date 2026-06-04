@@ -1,0 +1,19 @@
+---
+title: "Projects"
+---
+
+## jscpd-rs
+
+`jscpd-rs` is a native Rust implementation of the common `jscpd`
+duplicate-code detection workflow.
+
+It is built for local development and CI/CD environments where duplicate-code
+checks should be fast enough to run on every pull request. The project focuses
+on practical compatibility with upstream `jscpd`, prebuilt npm binaries for
+common platforms, native reports, and reproducible benchmark gates.
+
+- Repository: <https://github.com/vv-bogdanov/jscpd-rs>
+- npm: <https://www.npmjs.com/package/jscpd-rs>
+- crates.io: <https://crates.io/crates/jscpd-rs>
+- docs.rs: <https://docs.rs/jscpd-rs>
+

@@ -1,0 +1,30 @@
+---
+title: "Engineering notes on tools, agents, and reliable systems"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  max-items: 5
+  categories: true
+  feed: true
+---
+
+I am Viacheslav Bogdanov, an architect and full-stack engineer building
+developer tools, automation systems, and practical AI-assisted engineering
+workflows.
+
+This site is my technical notebook for work that benefits from a durable public
+write-up: performance investigations, implementation notes, product-quality
+trade-offs, reproducible benchmarks, and lessons from building tools that run
+in real CI/CD pipelines.
+
+## Current Focus
+
+- Fast developer tooling for large repositories.
+- AI-assisted coding workflows that still need deterministic quality gates.
+- Native CLI tools with practical compatibility, low installation friction, and
+  clear release gates.
+- Engineering choices that reduce maintenance cost instead of increasing it.
+
+## Recent Writing
+

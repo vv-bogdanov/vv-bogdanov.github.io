@@ -1,0 +1,19 @@
+---
+title: "About"
+---
+
+I am Viacheslav Bogdanov, an architect and full-stack engineer.
+
+My work is usually at the intersection of product engineering, developer
+tooling, automation, and reliability. I care about systems that are fast enough
+to stay enabled, simple enough to maintain, and observable enough to trust.
+
+This blog is written in English and focuses on practical engineering notes:
+what was built, why the trade-off was chosen, how it was measured, and what
+still needs improvement.
+
+## Links
+
+- GitHub: <https://github.com/vv-bogdanov>
+- Company: MyDream Labs LLC
+
