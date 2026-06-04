@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: _site
   resources:
-    - assets/jscpd-rs-duplicate-code-flow.png
-    - assets/jscpd-rs-duplicate-code-flow.svg
+    - assets/jscpd-rs-duplicate-code-flow-preview.png
+    - assets/jscpd-rs-duplicate-code-flow-preview.svg
     - assets/milky-way-map.jpeg
     - assets/slava-avatar-136.jpg
     - assets/slava-avatar-272.jpg

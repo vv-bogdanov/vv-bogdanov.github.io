@@ -3,7 +3,7 @@ title: "AI agents generate code faster. Duplicate-code checks need to keep up."
 description: "jscpd-rs is a Rust duplicate-code and clone-detection tool with 50x+ public benchmark speedups for CI/CD, human review, and AI agent workflows."
 author: "Viacheslav Bogdanov"
 date: "2026-06-04"
-image: "../../assets/jscpd-rs-duplicate-code-flow.png"
+image: "../../assets/jscpd-rs-duplicate-code-flow-preview.png"
 categories:
   - developer-tools
   - rust
@@ -30,7 +30,7 @@ volume goes up, quality gates have to become cheaper too.
 
 One of those gates is duplicate-code detection.
 
-![](../../assets/jscpd-rs-duplicate-code-flow.svg){.launch-diagram fig-alt="jscpd-rs scans a repository, matches duplicate fragments, and feeds duplicate-code feedback back to CI, reviewers, and AI coding agents."}
+![](../../assets/jscpd-rs-duplicate-code-flow-preview.svg){.launch-diagram fig-alt="jscpd-rs scans a repository, matches duplicate fragments, and feeds duplicate-code feedback back to CI, reviewers, and AI coding agents."}
 
 That is the reason for `jscpd-rs`: a fast native duplicate-code detector for
 humans, AI coding agents, and CI/CD pipelines.

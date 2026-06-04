@@ -113,7 +113,7 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
   <a class="featured-image" href="posts/fast-duplicate-code-detection-for-agents/">
     <img
       class="featured-diagram"
-      src="assets/jscpd-rs-duplicate-code-flow.png"
+      src="assets/jscpd-rs-duplicate-code-flow-preview.png"
       alt="jscpd-rs duplicate-code detection flow"
     />
   </a>
