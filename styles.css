@@ -231,14 +231,18 @@ footer.footer {
   background: var(--soft-bg);
 }
 
+.social-links,
 .footer-social-links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
-  justify-content: flex-end;
+}
+
+.social-links {
   margin: 0;
 }
 
+.social-links a,
 .footer-social-links a {
   align-items: center;
   background: #fff;
@@ -254,20 +258,40 @@ footer.footer {
   text-decoration: none;
 }
 
+.social-links a:hover,
 .footer-social-links a:hover {
   background: var(--soft-bg);
   border-color: #b8c3d6;
   color: var(--link-color);
 }
 
+.social-links i,
 .footer-social-links i {
   color: var(--muted-color);
   font-size: 1rem;
   line-height: 1;
 }
 
+.social-links a:hover i,
 .footer-social-links a:hover i {
   color: var(--link-color);
+}
+
+.home-social-links {
+  margin-top: 0.8rem;
+}
+
+.footer-social-links {
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.footer-social-links a {
+  height: 2.1rem;
+  justify-content: center;
+  min-height: 2.1rem;
+  padding: 0;
+  width: 2.1rem;
 }
 
 .theme-grid {
