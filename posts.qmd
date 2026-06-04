@@ -3,9 +3,10 @@ title: "Writing"
 listing:
   contents: posts
   sort: "date desc"
-  type: default
-  categories: true
+  type: grid
+  categories: false
   feed: true
+  image-height: 160px
 ---
 
 Long-form engineering notes, release write-ups, benchmark-driven project

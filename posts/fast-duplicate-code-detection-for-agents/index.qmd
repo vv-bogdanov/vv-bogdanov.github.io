@@ -3,10 +3,12 @@ title: "AI agents generate code faster. Duplicate-code checks need to keep up."
 description: "jscpd-rs is a Rust duplicate-code and clone-detection tool with 50x+ public benchmark speedups for CI/CD, human review, and AI agent workflows."
 author: "Viacheslav Bogdanov"
 date: "2026-06-04"
+image: "../../assets/milky-way-map.jpeg"
 categories:
   - developer-tools
   - rust
   - ci
+  - npm
   - ai-agents
   - code-quality
 ---
