@@ -1,0 +1,277 @@
+---
+title: "AI agents generate code faster. Duplicate-code checks need to keep up."
+description: "jscpd-rs is a Rust duplicate-code and clone-detection tool with 50x+ public benchmark speedups for CI/CD, human review, and AI agent workflows."
+author: "Viacheslav Bogdanov"
+date: "2026-06-04"
+categories:
+  - developer-tools
+  - rust
+  - ci
+  - ai-agents
+  - code-quality
+---
+
+Software teams have always created duplicate code.
+
+Sometimes it is intentional: copy a working block, adapt it, ship the feature.
+Sometimes it is accidental: two teams solve the same problem in parallel, a
+helper function grows in three packages, or a test setup gets copied until no
+one remembers which version is canonical.
+
+AI coding agents do not create this problem from nothing. They make it cheaper.
+
+That distinction matters. The right conclusion is not "AI writes bad code".
+The real shift is that code throughput is rising. Humans can generate more code
+with less friction, agents can produce repeated structures very quickly, and
+large teams already had the same issue before agents became common. When code
+volume goes up, quality gates have to become cheaper too.
+
+One of those gates is duplicate-code detection.
+
+That is the reason for `jscpd-rs`: a fast native duplicate-code detector for
+humans, AI coding agents, and CI/CD pipelines.
+
+It is a Rust implementation of the common `jscpd` workflow. It scans a
+repository, finds repeated source fragments, writes reports for humans and
+automation, and can fail CI when duplication crosses a configured threshold.
+
+The goal is not to make refactoring automatic. The goal is to make duplication
+visible quickly enough that humans and agents can act on it before it becomes
+maintenance debt.
+
+## What duplicate-code detection is
+
+If you have not used `jscpd`: it is a copy-paste detector for source code. It
+scans a repository, finds duplicated fragments across files, generates reports,
+and can fail CI when duplicated code crosses a configured threshold.
+
+This is useful because duplicated code is not only a cleanliness issue. It can
+increase review load, hide inconsistent fixes, make refactors harder, and
+spread bugs across several files. In large repositories the problem is rarely a
+single obvious copy-paste block. It is usually a slow accumulation of repeated
+handlers, adapters, tests, config objects, validators, API wrappers, and
+business rules.
+
+For humans, duplicate-code detection is a refactoring map.
+
+For agents, it is a feedback signal.
+
+An agent can generate a new implementation, run a fast duplicate check, inspect
+the repeated regions, and then decide whether to reuse an existing abstraction,
+extract a shared helper, or leave the duplication because it is intentionally
+local. The same loop helps a human reviewer: instead of scanning a large diff
+for copy-paste manually, the tool gives a concrete list of repeated fragments.
+
+## Why speed changes the product
+
+A slow quality gate becomes optional.
+
+Teams start running it only before releases. Or only manually. Or only on small
+folders. Or they keep the check, but developers learn to avoid it because it
+adds enough waiting time to hurt the normal pull request loop.
+
+That is why I built `jscpd-rs`.
+
+The goal is not to invent a completely new workflow. The goal is to make an
+existing useful workflow cheap enough to leave on.
+
+```bash
+npx jscpd-rs --threshold 5 --exitCode 1 .
+```
+
+or:
+
+```bash
+cargo install jscpd-rs --locked
+jscpd --threshold 5 --exitCode 1 .
+```
+
+The npm package installs prebuilt native binaries on common Linux, macOS, and
+Windows targets, so most npm users do not need a Rust toolchain.
+
+For a team, this turns duplicate-code detection from an occasional cleanup tool
+into a normal pull-request check. For an agent workflow, it turns duplication
+into a quick iteration signal instead of a later code review surprise.
+
+## Who this is for
+
+In practice, the tool is meant for this group:
+
+> `jscpd-rs` is a fast native duplicate-code detector for humans, coding
+> agents, and CI/CD.
+
+More specifically:
+
+- for humans, it finds copy-paste regions before they become maintenance debt;
+- for reviewers, it turns repeated code into concrete report entries;
+- for agents, it provides a fast feedback loop for deduplication and reuse;
+- for CI/CD, it keeps the duplicate-code gate cheap enough to run on every pull
+  request;
+- for teams, it reduces waiting time, review load, and wasted compute.
+
+The agent angle is important, but it should stay practical. Agents are not the
+enemy. Higher code throughput is the change. Faster guardrails are the
+response.
+
+What it is designed to do:
+
+- find repeated code quickly enough for normal development loops;
+- produce reports that humans can inspect;
+- produce machine-readable output that CI and agent workflows can consume;
+- stay compatible with familiar `jscpd` usage where it matters;
+- avoid adding runtime complexity just to chase theoretical extensibility.
+
+What it is not:
+
+- it does not decide whether every duplicate is bad;
+- it does not replace human judgment about abstraction boundaries;
+- it does not currently load dynamic npm reporters, stores, listeners, or
+  plugins;
+- it is coverage-first compatible, not a promise of exact 1:1 internal token
+  streams.
+
+## Current benchmark baseline
+
+The current public benchmark suite uses pinned public repositories and compares
+`jscpd-rs` with upstream `jscpd` on the same high-level inputs and options.
+
+| Case | Format | jscpd-rs avg | upstream jscpd avg | Speedup |
+| --- | --- | ---: | ---: | ---: |
+| React | JavaScript | 0.197325s | 10.413453s | 52.77x |
+| Next.js | TypeScript | 0.270786s | 14.983243s | 55.33x |
+| Prometheus | Go | 0.083162s | 4.842499s | 58.23x |
+
+These numbers are not microbenchmarks. They are release-gate numbers for
+duplicate-code detection on real public repositories pinned by commit.
+
+The important product point is not only the exact multiplier. It is that the
+check moves from "noticeable quality gate" toward "cheap enough to run often".
+
+## Compatibility model
+
+The compatibility gate is coverage-first.
+
+On the same inputs and options, `jscpd-rs` must not miss duplicated source
+lines reported by upstream `jscpd`. Extra Rust findings are allowed while
+compatibility converges, but they remain visible in compatibility reports as
+`extra` findings.
+
+This is a deliberate trade-off. Exact pair identity is valuable, but it is not
+always the right first release blocker for multi-way duplicates and different
+tokenizers. The important contract is that the Rust implementation should not
+silently miss duplicated source ranges that upstream reports.
+
+The current release is native-only. It does not embed a JavaScript runtime or
+call upstream `jscpd` for core behavior. Dynamic npm reporters, stores,
+listeners, and plugins are intentionally out of scope for the current 0.x line.
+
+## What is implemented today
+
+The current release covers the common duplicate-code detection workflow:
+
+- `jscpd` and `jscpd-server` command names;
+- `.jscpd.json` and `package.json#jscpd` config loading;
+- upstream-style CLI flags for thresholds, formats, ignores, reports, blame,
+  exit codes, and CI usage;
+- native built-in reports: console, JSON, SARIF, HTML, XML, CSV, Markdown,
+  badge, Xcode, threshold, AI-oriented output, and silent output;
+- native Oxc-backed JavaScript, TypeScript, JSX, and TSX token processing;
+- upstream-synchronized format registry with generic native tokenization for
+  long-tail formats;
+- native Git blame support;
+- native REST/MCP server workflow for project statistics and snippet checks.
+
+For CI, the most common shape is simple:
+
+```yaml
+jobs:
+  duplication:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npx jscpd-rs src --reporters console,json --threshold 5 --exitCode 1
+```
+
+## How this helps agents
+
+Fast duplicate-code detection gives an agent a concrete loop:
+
+1. Generate or modify code.
+2. Run a duplicate scan.
+3. Inspect repeated fragments.
+4. Decide whether to reuse an existing function, extract a helper, consolidate
+   test fixtures, or keep the duplication with a reason.
+5. Run the scan again.
+
+The same loop works for humans, but agents make the economics more obvious. If
+an agent can produce a large patch quickly, the project needs fast checks that
+can keep up with that pace. A slow check becomes a bottleneck. A cheap check
+becomes part of the normal edit loop.
+
+This is also why reports matter. A tool that only prints a summary is not
+enough. `jscpd-rs` can write machine-readable JSON and SARIF reports for CI,
+HTML and console reports for humans, and compact AI-oriented output for agent
+prompts and refactoring workflows.
+
+The useful agent pattern is not "generate code and trust it". The useful
+pattern is "generate code, run deterministic checks, feed precise findings back
+into the next edit". Duplicate-code detection fits that loop well because the
+finding is concrete: these files contain repeated source fragments.
+
+## The implementation approach
+
+The hot path is intentionally straightforward:
+
+1. parse CLI/config into normalized options;
+2. discover files with Rust ignore and glob handling;
+3. tokenize into compact native token maps;
+4. shard by format and run preparation/detection in parallel;
+5. compare numeric token hashes;
+6. write native reports and apply upstream-style exit-code behavior.
+
+For JavaScript and TypeScript, token processing is backed by Oxc. For long-tail
+formats, the project starts with a synchronized format registry and generic
+native tokenization, then promotes formats only when real compatibility data
+shows that generic tokenization is not enough.
+
+That keeps the project maintainable. The point is not to write the maximum
+amount of Rust. The point is to keep the product fast, native, and practical
+without rebuilding mature infrastructure unnecessarily.
+
+## Try it
+
+With npm:
+
+```bash
+npx jscpd-rs --threshold 5 --exitCode 1 .
+```
+
+With Cargo:
+
+```bash
+cargo install jscpd-rs --locked
+jscpd --threshold 5 --exitCode 1 .
+```
+
+Links:
+
+- Repository: <https://github.com/vv-bogdanov/jscpd-rs>
+- npm: <https://www.npmjs.com/package/jscpd-rs>
+- crates.io: <https://crates.io/crates/jscpd-rs>
+- docs.rs: <https://docs.rs/jscpd-rs>
+
+The feedback I care about most:
+
+- repositories where `jscpd-rs` misses duplicated lines found by upstream
+  `jscpd`;
+- noisy extra findings that make reports less useful;
+- install friction on supported npm platforms;
+- public benchmark cases that represent real large repositories;
+- workflows where agents or humans need better deduplication output.
+
+Duplicate code was already a human problem. Agents make it easier to create at
+scale. The answer is not to slow down development. The answer is to make the
+guardrails fast enough to keep up.
