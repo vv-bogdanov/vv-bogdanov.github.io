@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: _site
   resources:
+    - assets/external/**/*
     - assets/favicon.png
     - assets/jscpd-rs-duplicate-code-flow-preview.png
     - assets/jscpd-rs-duplicate-code-flow-preview.svg
