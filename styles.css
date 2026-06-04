@@ -258,6 +258,12 @@ footer.footer {
   border-radius: 6px;
 }
 
+.featured-image img.featured-diagram,
+.quarto-grid-item img.thumbnail-image {
+  object-fit: contain;
+  background: #f8fbff;
+}
+
 .featured-copy {
   display: flex;
   flex-direction: column;

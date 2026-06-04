@@ -111,7 +111,11 @@ philosophy behind tools that should be fast, reliable, and simple to operate.
 ```{=html}
 <article class="featured-post">
   <a class="featured-image" href="posts/fast-duplicate-code-detection-for-agents/">
-    <img src="assets/milky-way-map.jpeg" alt="Milky Way map" />
+    <img
+      class="featured-diagram"
+      src="assets/jscpd-rs-duplicate-code-flow.png"
+      alt="jscpd-rs duplicate-code detection flow"
+    />
   </a>
   <div class="featured-copy">
     <p class="featured-meta">Jun 4, 2026 / developer tools / Rust / CI / npm</p>
