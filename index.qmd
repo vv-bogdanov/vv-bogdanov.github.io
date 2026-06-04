@@ -1,5 +1,5 @@
 ---
-title: "Engineering notes on tools, agents, and reliable systems"
+title: "Viacheslav Bogdanov"
 listing:
   contents: posts
   sort: "date desc"
@@ -9,22 +9,22 @@ listing:
   feed: true
 ---
 
-I am Viacheslav Bogdanov, an architect and full-stack engineer building
-developer tools, automation systems, and practical AI-assisted engineering
-workflows.
+I am an architect, full-stack engineer, and product builder.
 
-This site is my technical notebook for work that benefits from a durable public
-write-up: performance investigations, implementation notes, product-quality
-trade-offs, reproducible benchmarks, and lessons from building tools that run
-in real CI/CD pipelines.
+I like researching hard problems, turning ideas into working products, and
+building high-quality tools that make other builders faster. My work spans
+developer tooling, AI-assisted engineering, DeFi systems, mobile products,
+automation, and reliable end-to-end product delivery.
 
-## Current Focus
+This blog is a minimal public notebook for technical write-ups: architecture,
+benchmarks, implementation decisions, product-quality trade-offs, and the
+philosophy behind tools that should be fast, reliable, and simple to operate.
 
-- Fast developer tooling for large repositories.
-- AI-assisted coding workflows that still need deterministic quality gates.
-- Native CLI tools with practical compatibility, low installation friction, and
-  clear release gates.
-- Engineering choices that reduce maintenance cost instead of increasing it.
+## Current Themes
+
+- Developer tools for large codebases and CI/CD.
+- AI-assisted software development with deterministic quality gates.
+- Architecture that stays understandable under real production pressure.
+- Research-driven product building: prototype, measure, simplify, ship.
 
 ## Recent Writing
-

@@ -6,17 +6,17 @@ website:
   title: "Viacheslav Bogdanov"
   site-url: "https://vv-bogdanov.github.io"
   repo-url: "https://github.com/vv-bogdanov/vv-bogdanov.github.io"
-  description: "Engineering notes on developer tooling, AI-assisted software development, performance, and reliable systems."
+  description: "Minimal engineering notes on research, architecture, developer tools, AI-assisted software development, and reliable products."
   navbar:
     right:
-      - text: "Blog"
+      - text: "Writing"
         href: posts.qmd
       - text: "Projects"
         href: projects.qmd
       - text: "About"
         href: about.qmd
       - icon: github
-        href: https://github.com/vv-bogdanov
+        href: https://github.com/bogdoslavik
         aria-label: GitHub
   page-footer:
     left: "(c) 2026 Viacheslav Bogdanov"
@@ -27,9 +27,9 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - styles.css
-    toc: true
+      - default
+    css: styles.css
+    toc: false
     code-copy: true
     link-external-newwindow: true
 

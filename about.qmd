@@ -2,18 +2,45 @@
 title: "About"
 ---
 
-I am Viacheslav Bogdanov, an architect and full-stack engineer.
+I am Viacheslav Bogdanov, an architect, full-stack engineer, and product
+builder.
 
-My work is usually at the intersection of product engineering, developer
-tooling, automation, and reliability. I care about systems that are fast enough
-to stay enabled, simple enough to maintain, and observable enough to trust.
+I started programming in the 5th grade and have been building software since
+the early web era. I also won and placed in programming competitions, including
+a regional informatics olympiad result that allowed me to enter university
+without exams.
 
-This blog is written in English and focuses on practical engineering notes:
-what was built, why the trade-off was chosen, how it was measured, and what
-still needs improvement.
+Over the years I have built and launched consumer and business products across
+navigation, OCR, industrial measurement, merchandising, vehicle tracking,
+mobile apps, blockchain systems, local AI assistants, and AI video products.
+Some of them reached the top of their categories, including Touch Commander /
+Touch Shell, Animated Weather, and aTorrent.
+
+In recent years my work has focused on DeFi, Solidity, optimization, security,
+AI agents, local AI systems, and new developer tools.
+
+## How I Work
+
+I like to research deeply, reduce unclear problems to working architecture, and
+build tools that improve the speed or quality of future work.
+
+My default bias is practical: understand the user, build the smallest useful
+system, measure it, simplify it, and keep improving from real feedback.
+
+I can work hands-on across the stack, lead development teams, and coordinate AI
+coding agents when they make delivery faster without weakening engineering
+quality.
+
+In three words: generalist, integrator, optimizer.
+
+## Philosophy
+
+Good architecture should make change cheaper. Good tools should remove friction
+without hiding important constraints. Good products should be useful enough to
+survive contact with real users.
 
 ## Links
 
-- GitHub: <https://github.com/vv-bogdanov>
-- Company: MyDream Labs LLC
-
+- GitHub: <https://github.com/bogdoslavik>
+- MyDream.Video: <https://www.mydream.video>
+- LocalHelper.AI: <https://www.localhelper.ai>

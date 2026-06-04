@@ -2,6 +2,8 @@
 title: "Projects"
 ---
 
+Selected current and recent work.
+
 ## jscpd-rs
 
 `jscpd-rs` is a native Rust implementation of the common `jscpd`
@@ -17,3 +19,15 @@ common platforms, native reports, and reproducible benchmark gates.
 - crates.io: <https://crates.io/crates/jscpd-rs>
 - docs.rs: <https://docs.rs/jscpd-rs>
 
+## MyDream.Video
+
+Current web, iPhone, and Android project for AI video creation.
+
+- Website: <https://www.mydream.video>
+
+## LocalHelper.AI
+
+Local voice assistant built with Electron, Whisper.cpp, Llama.cpp, and Piper.
+Released on Steam and already generating early revenue.
+
+- Website: <https://www.localhelper.ai>

@@ -1,27 +1,77 @@
+:root {
+  --content-width: 760px;
+  --text-color: #111111;
+  --muted-color: #555555;
+  --border-color: #e5e5e5;
+  --link-color: #0f5fff;
+}
+
 body {
-  line-height: 1.65;
+  color: var(--text-color);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
 }
 
 .navbar-title {
   font-weight: 700;
 }
 
+.navbar {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-columns .content {
+  max-width: var(--content-width);
+}
+
 h1,
 h2,
 h3 {
   letter-spacing: 0;
+  line-height: 1.25;
 }
 
-.quarto-title-banner {
-  background: #f8fafc;
-  color: #111827;
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+  margin-top: 2.5rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 code {
   font-size: 0.95em;
 }
 
+.description,
 .listing-description {
-  color: #4b5563;
+  color: var(--muted-color);
 }
 
+.quarto-title-meta {
+  color: var(--muted-color);
+}
+
+footer.footer {
+  border-top: 1px solid var(--border-color);
+  color: var(--muted-color);
+}
